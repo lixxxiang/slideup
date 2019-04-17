@@ -1,0 +1,71 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/android"
+    tools:context=".MainActivity">
+
+    <com.yinglan.scrolllayout.ScrollLayout
+        android:id="@+id/scroll_down_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000">
+        <!--app:allowHorizontalScroll="true"-->
+        <!--app:exitOffset="0dp"-->
+        <!--app:isSupportExit="true"-->
+        <!--app:maxOffset="260dp"-->
+        <!--app:minOffset="50dp"-->
+        <!--app:mode="exit"-->
+
+        <com.yinglan.scrolllayout.content.ContentScrollView
+            android:id="@+id/content_scroll_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp"
+                    android:background="@drawable/test02"></ImageView>
+
+                <TextView
+                    android:id="@+id/text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/view_pager"
+                    android:text="ivity]: Relayout returned: old=[0,0][1440,2960] new=[0,0][1440,2960] result=0x5 surface={valid=false 0} changed=true
+2019-04-17 16:13:28.853 20059-20059/com.yinglan.scrolllayout.demo D/ViewRootImpl@9579ccb[MainActivity]: Surface release. android.view.WindowManagerGlobal.setStoppedState:669 android.app.Activity.performStop:7646 android.app.ActivityThread.callActivityOnStop:4352 android.app.ActivityThread.performStopActivityInner:4330 android.app.ActivityThread.handleStopActivity:4405 android.app.servertransaction.StopActivityItem.execute:41 android.app.servertransaction.TransactionExecutor.executeLifecycleState:145 android.app.servertransaction.TransactionExecutor.execute:70 "
+                    android:padding="16dp" />
+                <TextView
+                    android:id="@+id/text_foot"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:text="点击或上滑打开" />
+
+            </RelativeLayout>
+
+        </com.yinglan.scrolllayout.content.ContentScrollView>
+
+    </com.yinglan.scrolllayout.ScrollLayout>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"          android:titleTextColor="@android:color/white"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar"></android.support.v7.widget.Toolbar>
+
+</FrameLayout>
